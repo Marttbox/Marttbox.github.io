@@ -1,9 +1,12 @@
-// INVERTIR ORDEN (última = primera)
+document.addEventListener("DOMContentLoaded", () => {
+
 const galeria = document.getElementById("galeria");
 const items = Array.from(galeria.children);
+
+// invertir orden
 items.reverse().forEach(item => galeria.appendChild(item));
 
-// LIGHTBOX
+// lightbox
 const lightbox = document.getElementById("lightbox");
 const imagenGrande = document.getElementById("imagenGrande");
 
@@ -16,4 +19,6 @@ document.querySelectorAll(".item img").forEach(img => {
 
 lightbox.addEventListener("click", () => {
     lightbox.style.display = "none";
+});
+
 });
