@@ -1,9 +1,7 @@
-// INVERTIR ORDEN (última = primera)
 const galeria = document.getElementById("galeria");
 const items = Array.from(galeria.children);
 items.reverse().forEach(item => galeria.appendChild(item));
 
-// LIGHTBOX
 const lightbox = document.getElementById("lightbox");
 const imagenGrande = document.getElementById("imagenGrande");
 
