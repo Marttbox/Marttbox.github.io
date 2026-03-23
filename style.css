@@ -22,9 +22,9 @@ text-shadow:0 0 20px black;
 
 .galeria{
 display:grid;
-grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
-gap:15px;
-padding:30px;
+grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+gap:20px;
+padding:20px;
 }
 
 .item img{
