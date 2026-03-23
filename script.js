@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const galeria = document.getElementById("galeria");
 const items = Array.from(galeria.children);
 
-// 🔥 invertir orden (última = primera)
-items.reverse().forEach(item => galeria.appendChild(item));
 
 // lightbox
 const lightbox = document.getElementById("lightbox");
