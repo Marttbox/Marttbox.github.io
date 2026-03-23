@@ -1,8 +1,19 @@
-function abrir(img){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("imagenGrande").src=img.src;
-}
+// INVERTIR ORDEN (última = primera)
+const galeria = document.getElementById("galeria");
+const items = Array.from(galeria.children);
+items.reverse().forEach(item => galeria.appendChild(item));
 
-function cerrar(){
-document.getElementById("lightbox").style.display="none";
-}
+// LIGHTBOX
+const lightbox = document.getElementById("lightbox");
+const imagenGrande = document.getElementById("imagenGrande");
+
+document.querySelectorAll(".item img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        imagenGrande.src = img.src;
+    });
+});
+
+lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
