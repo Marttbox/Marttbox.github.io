@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const galeria = document.getElementById("galeria");
-const items = Array.from(galeria.children);
-
-
-// lightbox
 const lightbox = document.getElementById("lightbox");
 const imagenGrande = document.getElementById("imagenGrande");
 
