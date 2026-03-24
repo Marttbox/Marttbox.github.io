@@ -51,6 +51,16 @@ document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") {
             index = (index - 1 + imagenes.length) % imagenes.length;
             mostrarImagen();
+
+            document.querySelector(".izquierda").addEventListener("click", () => {
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    mostrarImagen();
+});
+
+document.querySelector(".derecha").addEventListener("click", () => {
+    index = (index + 1) % imagenes.length;
+    mostrarImagen();
+});
         }
     }
 });
