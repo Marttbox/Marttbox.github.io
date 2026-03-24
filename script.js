@@ -51,6 +51,20 @@ document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") {
             index = (index - 1 + imagenes.length) % imagenes.length;
             mostrarImagen();
+
+            .flecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:10px;
+user-select:none;
+}
+
+.izquierda{ left:20px; }
+.derecha{ right:20px; }
         }
     }
 });
