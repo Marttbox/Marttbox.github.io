@@ -1,35 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+const lightbox = document.getElementById("lightbox");
+const imagenGrande = document.getElementById("imagenGrande");
+const imagenes = document.querySelectorAll(".item img");
+
+let index = 0;
+
+// Abrir imagen
+imagenes.forEach((img, i) => {
     img.addEventListener("click", () => {
+        index = i;
+        mostrarImagen();
+    });
+});
+
+function mostrarImagen(){
     lightbox.style.display = "flex";
+    imagenGrande.src = imagenes[index].src;
+
     setTimeout(() => {
         lightbox.classList.add("active");
     }, 10);
-    imagenGrande.src = img.src;
+}
 
-        document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        lightbox.style.display = "none";
-        lightbox.classList.remove("active");
-    }
-});
-});
-
+// Cerrar al hacer click
 lightbox.addEventListener("click", () => {
     lightbox.classList.remove("active");
+
     setTimeout(() => {
         lightbox.style.display = "none";
     }, 300);
 });
 
-const lightbox = document.getElementById("lightbox");
-const imagenGrande = document.getElementById("imagenGrande");
+// Teclas
+document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
 
-document.querySelectorAll(".item img").forEach(img => {
-    img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        imagenGrande.src = img.src;
-    });
+        if (e.key === "Escape") {
+            lightbox.classList.remove("active");
+            setTimeout(() => {
+                lightbox.style.display = "none";
+            }, 300);
+        }
+
+        if (e.key === "ArrowRight") {
+            index = (index + 1) % imagenes.length;
+            mostrarImagen();
+        }
+
+        if (e.key === "ArrowLeft") {
+            index = (index - 1 + imagenes.length) % imagenes.length;
+            mostrarImagen();
+        }
+    }
 });
 
-lightbox.addEventListener("click", () => {
-    
+});
