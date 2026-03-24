@@ -68,6 +68,20 @@ border-radius:10px;
 transform:scale(0.8);
 opacity:0;
 transition:0.3s;
+
+  .flecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:10px;
+user-select:none;
+}
+
+.izquierda{ left:20px; }
+.derecha{ right:20px; }
 }
 
 .lightbox.active img{
