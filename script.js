@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
         lightbox.classList.add("active");
     }, 10);
     imagenGrande.src = img.src;
+
+        document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        lightbox.style.display = "none";
+        lightbox.classList.remove("active");
+    }
+});
 });
 
 lightbox.addEventListener("click", () => {
@@ -26,13 +33,3 @@ document.querySelectorAll(".item img").forEach(img => {
 
 lightbox.addEventListener("click", () => {
     
-    document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        lightbox.style.display = "none";
-        lightbox.classList.remove("active");
-    }
-});
-    lightbox.style.display = "none";
-});
-
-});
