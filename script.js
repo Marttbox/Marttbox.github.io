@@ -61,6 +61,25 @@ document.querySelector(".derecha").addEventListener("click", () => {
     index = (index + 1) % imagenes.length;
     mostrarImagen();
 });
+            let startX = 0;
+
+lightbox.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (endX - startX > 50) {
+        index = (index - 1 + imagenes.length) % imagenes.length;
+        mostrarImagen();
+    }
+
+    if (startX - endX > 50) {
+        index = (index + 1) % imagenes.length;
+        mostrarImagen();
+    }
+});
         }
     }
 });
