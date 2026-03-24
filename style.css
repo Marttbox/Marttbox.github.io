@@ -92,6 +92,18 @@ opacity:1;
 body{
 background:#111;
 color:white;
+
+  @media (prefers-color-scheme: dark){
+body{
+background:#111;
+color:white;
+
+  .lightbox{
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+}
+}
+}
 }
 }
 }
